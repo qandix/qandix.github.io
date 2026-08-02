@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>AP-Scout Pro — Enterprise Wi-Fi AP Scanner, Site Survey &amp; Encrypted Network Toolkit</title>
-<meta name="description" content="Professional Wi-Fi scanner, interference analysis, site survey and encrypted network toolkit for engineers. Windows and Android. No ads, no analytics — everything stays on your device.">
+<meta name="description" content="Professional Wi-Fi scanner, interference analysis, site survey and encrypted network toolkit for engineers on Windows. No ads, no analytics — everything stays on your device.">
 <meta property="og:title" content="AP-Scout Pro — Wi-Fi Scanner &amp; Site Survey for Engineers">
-<meta property="og:description" content="Real-time AP scanning across 2.4/5/6 GHz, interference analysis, floor-plan site survey, roaming analysis and a full network toolkit. On-device only.">
+<meta property="og:description" content="Real-time AP scanning across 2.4/5/6 GHz, interference analysis, floor-plan site survey, roaming analysis and a full network toolkit on Windows. On-device only.">
 <meta property="og:type" content="website">
 <style>
   :root{
@@ -55,11 +55,13 @@
   .card p{margin:0;color:var(--muted);font-size:13.5px}
   .card .ic{font-size:20px;margin-bottom:8px;display:block}
 
-  .shots{display:grid;grid-template-columns:2fr 1fr;gap:14px;align-items:start}
-  @media(max-width:760px){.shots{grid-template-columns:1fr}}
-  .shots figure{margin:0;border:1px solid var(--border);border-radius:12px;overflow:hidden;background:var(--surface)}
-  .shots img{display:block;width:100%;height:auto}
-  .shots figcaption{font-size:12px;color:var(--muted);padding:9px 12px}
+  .gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:14px}
+  .gallery a{text-decoration:none;color:inherit}
+  .gallery figure{margin:0;border:1px solid var(--border);border-radius:12px;overflow:hidden;background:var(--surface);
+     transition:border-color .15s, transform .15s}
+  .gallery a:hover figure{border-color:var(--accent);transform:translateY(-2px)}
+  .gallery img{display:block;width:100%;height:auto}
+  .gallery figcaption{font-size:12px;color:var(--muted);padding:9px 12px}
 
   .privacy-band{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:26px 28px}
   .privacy-band h2{margin-top:0}
@@ -80,6 +82,7 @@
   <div class="brand">AP-Scout <span>Pro</span></div>
   <nav>
     <a href="#features">Features</a>
+    <a href="#gallery">Gallery</a>
     <a href="#privacy">Privacy</a>
     <a href="https://qandix.github.io/ap-scout-pro/">Privacy Policy</a>
   </nav>
@@ -90,7 +93,7 @@
     <h1>Enterprise Wi-Fi AP Scanner, Site Survey &amp; Encrypted Network Toolkit</h1>
     <p class="tagline">Professional-grade Wi-Fi analysis for engineers — real-time AP scanning across
       2.4 / 5 / 6 GHz, interference ranking, floor-plan site surveys, roaming analysis and a full
-      network toolkit. On Windows and Android.</p>
+      network toolkit. On your Windows laptop, right where the site visit happens.</p>
     <div class="trust">
       <span>✔ No ads</span><span>✔ No analytics</span><span>✔ Data stays on your device</span><span>✔ AES-256 encrypted exports</span>
     </div>
@@ -98,9 +101,6 @@
     <div class="badges">
       <a class="store-btn" href="https://apps.microsoft.com/detail/9MVSCDKG46B1" rel="noopener">
         <span class="logo">🪟</span><span>Get it on<br><b>Microsoft Store</b><small>Windows 10 / 11</small></span>
-      </a>
-      <a class="store-btn" href="https://play.google.com/store/apps/details?id=com.qandix.apscout" rel="noopener">
-        <span class="logo">▶</span><span>Get it on<br><b>Google Play</b><small>Android 14+</small></span>
       </a>
     </div>
   </div>
@@ -123,12 +123,19 @@
   </div>
 </section>
 
-<section>
-  <h2>One tool, both platforms</h2>
-  <p class="lead">The same engine on your Windows laptop and your Android phone — surveys are portable between machines.</p>
-  <div class="shots">
-    <figure><img src="assets/desktop_survey.png" alt="Site Survey viewer on Windows — captured check points on a floor plan" loading="lazy" width="1920" height="1080"><figcaption>Site Survey on Windows — check points and AP anchors on your floor plan</figcaption></figure>
-    <figure><img src="assets/phone_scanner.png" alt="Wi-Fi scanner on Android — APs grouped by band with live signal readings" loading="lazy" width="1080" height="2400"><figcaption>The scanner on Android</figcaption></figure>
+<section id="gallery">
+  <h2>Gallery</h2>
+  <p class="lead">Every screen, exactly as it ships — click any shot for the full-size view.</p>
+  <div class="gallery">
+    <a href="assets/desktop_survey.png" target="_blank" rel="noopener"><figure><img src="assets/desktop_survey.png" alt="Site Survey viewer — captured check points and AP anchors on a floor plan" loading="lazy" width="1920" height="1080"><figcaption>Site Survey — check points &amp; AP anchors on your floor plan</figcaption></figure></a>
+    <a href="assets/gallery_survey_capture.png" target="_blank" rel="noopener"><figure><img src="assets/gallery_survey_capture.png" alt="Live Site Survey capture with point list and progress" loading="lazy" width="1920" height="1080"><figcaption>Live survey capture — point-by-point, honest progress</figcaption></figure></a>
+    <a href="assets/gallery_interference.png" target="_blank" rel="noopener"><figure><img src="assets/gallery_interference.png" alt="Interference analysis — congested channels ranked worst-first" loading="lazy" width="1920" height="1080"><figcaption>Interference — congested channels ranked worst-first</figcaption></figure></a>
+    <a href="assets/gallery_spectrum.png" target="_blank" rel="noopener"><figure><img src="assets/gallery_spectrum.png" alt="Channel spectrum view of interference across bands" loading="lazy" width="1920" height="1080"><figcaption>Channel spectrum across 2.4 / 5 / 6 GHz</figcaption></figure></a>
+    <a href="assets/gallery_rssi_history.png" target="_blank" rel="noopener"><figure><img src="assets/gallery_rssi_history.png" alt="Per-AP RSSI and estimated-SNR history graphs" loading="lazy" width="1920" height="1080"><figcaption>RSSI / estimated-SNR history</figcaption></figure></a>
+    <a href="assets/gallery_tracking.png" target="_blank" rel="noopener"><figure><img src="assets/gallery_tracking.png" alt="AP Tracking — target AP signal trend while moving" loading="lazy" width="1920" height="1080"><figcaption>AP Tracking — watch a target AP as you move</figcaption></figure></a>
+    <a href="assets/gallery_roaming.png" target="_blank" rel="noopener"><figure><img src="assets/gallery_roaming.png" alt="Roaming analysis — BSSID transitions on an RSSI timeline" loading="lazy" width="1920" height="1080"><figcaption>Roaming — BSSID transitions on the RSSI timeline</figcaption></figure></a>
+    <a href="assets/gallery_apdb.png" target="_blank" rel="noopener"><figure><img src="assets/gallery_apdb.png" alt="Encrypted AP Database — AP names instead of raw BSSIDs" loading="lazy" width="1920" height="1080"><figcaption>Encrypted AP Database — names instead of BSSIDs</figcaption></figure></a>
+    <a href="assets/gallery_light.png" target="_blank" rel="noopener"><figure><img src="assets/gallery_light.png" alt="Scanner in the light theme" loading="lazy" width="1920" height="1080"><figcaption>Light theme, if that's your thing</figcaption></figure></a>
   </div>
 </section>
 

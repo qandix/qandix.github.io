@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AP-Scout Pro — Enterprise Wi-Fi AP Scanner, Site Survey &amp; Encrypted Network Toolkit</title>
+<meta name="description" content="Professional Wi-Fi scanner, interference analysis, site survey and encrypted network toolkit for engineers. Windows and Android. No ads, no analytics — everything stays on your device.">
+<meta property="og:title" content="AP-Scout Pro — Wi-Fi Scanner &amp; Site Survey for Engineers">
+<meta property="og:description" content="Real-time AP scanning across 2.4/5/6 GHz, interference analysis, floor-plan site survey, roaming analysis and a full network toolkit. On-device only.">
+<meta property="og:type" content="website">
+<style>
+  :root{
+    --bg:#0E1116; --surface:#161B22; --surface2:#1C2230; --border:#2A3240;
+    --ink:#E7ECF2; --muted:#97A2B0; --accent:#34C3D4; --accent-ink:#08222a;
+    --good:#4FCB84;
+  }
+  @media (prefers-color-scheme: light){
+    :root{ --bg:#F5F7F9; --surface:#FFFFFF; --surface2:#EEF1F4; --border:#DCE2E8;
+           --ink:#161B22; --muted:#5B6672; --accent:#0C8FA3; --accent-ink:#ffffff; --good:#1E9E5A; }
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);
+       font-family:"Segoe UI Variable Text","Segoe UI",system-ui,-apple-system,Roboto,sans-serif;line-height:1.55}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 22px}
+  header{padding:20px 0;display:flex;align-items:center;justify-content:space-between;gap:12px}
+  .brand{font-weight:800;letter-spacing:-.02em;font-size:18px}
+  .brand span{color:var(--accent)}
+  nav a{color:var(--muted);text-decoration:none;margin-left:18px;font-size:14px}
+  nav a:hover{color:var(--ink)}
+
+  .hero{padding:44px 0 30px;display:grid;grid-template-columns:1.05fr .95fr;gap:36px;align-items:center}
+  @media(max-width:860px){.hero{grid-template-columns:1fr}}
+  h1{font-size:clamp(28px,4.5vw,42px);font-weight:800;letter-spacing:-.02em;margin:0 0 14px;text-wrap:balance}
+  .tagline{color:var(--muted);font-size:17px;margin:0 0 22px;max-width:52ch}
+  .badges{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+  .store-btn{display:inline-flex;align-items:center;gap:10px;background:var(--surface);border:1px solid var(--border);
+     border-radius:12px;padding:11px 18px;text-decoration:none;color:var(--ink);font-weight:600;font-size:14.5px;
+     transition:border-color .15s, transform .15s}
+  .store-btn:hover{border-color:var(--accent);transform:translateY(-1px)}
+  .store-btn small{display:block;font-weight:400;color:var(--muted);font-size:11px;line-height:1.2}
+  .store-btn .logo{font-size:22px}
+  .hero-shot{border:1px solid var(--border);border-radius:14px;overflow:hidden;box-shadow:0 12px 40px rgba(0,0,0,.35)}
+  .hero-shot img{display:block;width:100%;height:auto}
+
+  .trust{display:flex;flex-wrap:wrap;gap:10px;margin:8px 0 6px}
+  .trust span{font-size:12.5px;color:var(--good);background:var(--surface);border:1px solid var(--border);
+     border-radius:99px;padding:5px 12px;font-weight:600}
+
+  section{padding:38px 0}
+  h2{font-size:24px;font-weight:800;letter-spacing:-.01em;margin:0 0 6px}
+  .lead{color:var(--muted);margin:0 0 24px;max-width:70ch}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px}
+  .card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:16px 17px}
+  .card h3{margin:0 0 6px;font-size:15px;font-weight:700}
+  .card p{margin:0;color:var(--muted);font-size:13.5px}
+  .card .ic{font-size:20px;margin-bottom:8px;display:block}
+
+  .shots{display:grid;grid-template-columns:2fr 1fr;gap:14px;align-items:start}
+  @media(max-width:760px){.shots{grid-template-columns:1fr}}
+  .shots figure{margin:0;border:1px solid var(--border);border-radius:12px;overflow:hidden;background:var(--surface)}
+  .shots img{display:block;width:100%;height:auto}
+  .shots figcaption{font-size:12px;color:var(--muted);padding:9px 12px}
+
+  .privacy-band{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:26px 28px}
+  .privacy-band h2{margin-top:0}
+  .privacy-band ul{margin:0;padding-left:20px;color:var(--muted);font-size:14px}
+  .privacy-band li{margin:6px 0}
+  .privacy-band b{color:var(--ink)}
+
+  footer{border-top:1px solid var(--border);margin-top:30px;padding:26px 0 40px;color:var(--muted);font-size:13px}
+  footer .cols{display:flex;flex-wrap:wrap;gap:24px;justify-content:space-between;align-items:flex-start}
+  footer a{color:var(--muted)}
+  footer a:hover{color:var(--ink)}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div class="brand">AP-Scout <span>Pro</span></div>
+  <nav>
+    <a href="#features">Features</a>
+    <a href="#privacy">Privacy</a>
+    <a href="https://qandix.github.io/ap-scout-pro/">Privacy Policy</a>
+  </nav>
+</header>
+
+<div class="hero">
+  <div>
+    <h1>Enterprise Wi-Fi AP Scanner, Site Survey &amp; Encrypted Network Toolkit</h1>
+    <p class="tagline">Professional-grade Wi-Fi analysis for engineers — real-time AP scanning across
+      2.4 / 5 / 6 GHz, interference ranking, floor-plan site surveys, roaming analysis and a full
+      network toolkit. On Windows and Android.</p>
+    <div class="trust">
+      <span>✔ No ads</span><span>✔ No analytics</span><span>✔ Data stays on your device</span><span>✔ AES-256 encrypted exports</span>
+    </div>
+    <p></p>
+    <div class="badges">
+      <a class="store-btn" href="https://apps.microsoft.com/detail/9MVSCDKG46B1" rel="noopener">
+        <span class="logo">🪟</span><span>Get it on<br><b>Microsoft Store</b><small>Windows 10 / 11</small></span>
+      </a>
+      <a class="store-btn" href="https://play.google.com/store/apps/details?id=com.qandix.apscout" rel="noopener">
+        <span class="logo">▶</span><span>Get it on<br><b>Google Play</b><small>Android 14+</small></span>
+      </a>
+    </div>
+  </div>
+  <div class="hero-shot"><img src="assets/desktop_scanner.png" alt="AP-Scout Pro on Windows — real-time Wi-Fi scanner grouped by SSID with signal, channel and vendor details" width="1920" height="1080"></div>
+</div>
+
+<section id="features">
+  <h2>Built for field engineers</h2>
+  <p class="lead">Everything the site visit needs, in one tool — scan, analyze, survey, verify, export.</p>
+  <div class="grid">
+    <div class="card"><span class="ic">📡</span><h3>Real-time AP scanner</h3><p>SSID, BSSID, RSSI, band, channel, width and vendor across 2.4 / 5 / 6 GHz — flat or grouped-by-SSID views with AP-Database name matching.</p></div>
+    <div class="card"><span class="ic">📶</span><h3>Interference analysis</h3><p>Congested channels ranked worst-first (co-channel + overlapping), in-app and in every export.</p></div>
+    <div class="card"><span class="ic">🗺️</span><h3>Site Survey</h3><p>Point-by-point capture on a floor-plan background, organised Project &gt; Site &gt; Building &gt; Floor, with per-band export sections.</p></div>
+    <div class="card"><span class="ic">🔀</span><h3>Roaming analysis</h3><p>BSSID transitions on an RSSI timeline with event markers, plus sticky-client detection with an exportable verdict ledger.</p></div>
+    <div class="card"><span class="ic">📈</span><h3>Signal history &amp; tracking</h3><p>Per-AP RSSI / estimated-SNR history graphs and target-AP tracking as you move — exportable to CSV and Excel.</p></div>
+    <div class="card"><span class="ic">🛰️</span><h3>Beacon translation</h3><p>Per-AP beacon decode — identity, radio, capabilities, vendor fields and the raw IE dump, all copyable. Detects Wi-Fi 7 (802.11be): 320 MHz, MLO, FTM/RTT.</p></div>
+    <div class="card"><span class="ic">🧰</span><h3>Network toolkit</h3><p>Ping, DNS, Traceroute, Port Check, HTTP, TLS Inspector, TCP Throughput, Latency Trend, Subnet Calculator, Wake-on-LAN, NTP, ARP Table.</p></div>
+    <div class="card"><span class="ic">🔐</span><h3>Encrypted by default</h3><p>AES-256-GCM encrypted AP Database, optional AES-256 password on all CSV / Excel / ZIP exports, encrypted on-device logs.</p></div>
+    <div class="card"><span class="ic">🌏</span><h3>Ready for the field</h3><p>15 languages, light &amp; dark themes, hover help on every control. Optional Survey Pro subscription for floor-plan surveys up to 5,000 points.</p></div>
+  </div>
+</section>
+
+<section>
+  <h2>One tool, both platforms</h2>
+  <p class="lead">The same engine on your Windows laptop and your Android phone — surveys are portable between machines.</p>
+  <div class="shots">
+    <figure><img src="assets/desktop_survey.png" alt="Site Survey viewer on Windows — captured check points on a floor plan" loading="lazy" width="1920" height="1080"><figcaption>Site Survey on Windows — check points and AP anchors on your floor plan</figcaption></figure>
+    <figure><img src="assets/phone_scanner.png" alt="Wi-Fi scanner on Android — APs grouped by band with live signal readings" loading="lazy" width="1080" height="2400"><figcaption>The scanner on Android</figcaption></figure>
+  </div>
+</section>
+
+<section id="privacy">
+  <div class="privacy-band">
+    <h2>Your data never leaves the device</h2>
+    <ul>
+      <li><b>No backend.</b> There is no cloud service behind this app — scans, surveys and databases live in the app's private storage only.</li>
+      <li><b>No telemetry.</b> No ads, no analytics, no tracking of any kind.</li>
+      <li><b>Exports are yours.</b> Files leave the device only when you share them — with optional AES-256 password protection.</li>
+      <li>Full details in the <a href="https://qandix.github.io/ap-scout-pro/">Privacy Policy</a>.</li>
+    </ul>
+  </div>
+</section>
+
+<footer>
+  <div class="cols">
+    <div>© 2026 QANDIX · AP-Scout Pro<br>Built for professional network engineers.</div>
+    <div>
+      <a href="https://qandix.github.io/ap-scout-pro/">Privacy Policy</a> ·
+      <a href="mailto:support@qandix.com">support@qandix.com</a>
+    </div>
+  </div>
+</footer>
+
+</div>
+</body>
+</html>

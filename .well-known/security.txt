@@ -1,4 +1,4 @@
 Contact: mailto:support@qandix.com
 Expires: 2027-08-01T00:00:00.000Z
 Preferred-Languages: en, th
-Canonical: https://qandix.github.io/.well-known/security.txt
+Canonical: https://qandix.com/.well-known/security.txt

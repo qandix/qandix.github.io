@@ -86,9 +86,9 @@
   .store-btn:hover{background:var(--accent-hi);transform:translateY(-1px);box-shadow:0 6px 28px rgba(240,166,58,.38)}
   .store-btn small{display:block;font-weight:500;color:rgba(35,19,3,.75);font-size:12px;line-height:1.3}
   .microcopy{font-size:12.5px;color:var(--muted);margin-top:10px;font-family:var(--mono)}
-  .hero-shot{border-radius:16px;overflow:hidden;border:1px solid var(--border);aspect-ratio:16/10.2;
+  .hero-shot{display:block;border-radius:16px;overflow:hidden;border:1px solid var(--border);cursor:zoom-in;
      box-shadow:0 0 0 1px rgba(240,166,58,.12), 0 24px 60px -20px rgba(0,0,0,.6), 0 8px 24px rgba(0,0,0,.4)}
-  .hero-shot img{display:block;width:100%;height:100%;object-fit:cover;object-position:left top}
+  .hero-shot img{display:block;width:100%;height:auto}
 
   .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:6px 0 0}
   .stat{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:16px 16px 13px;text-align:center}
@@ -128,9 +128,21 @@
   .gallery a{text-decoration:none;color:inherit}
   .gallery figure{margin:0;border:1px solid var(--border);border-radius:12px;overflow:hidden;background:var(--surface);transition:border-color .15s}
   .gallery a:hover figure{border-color:rgba(240,166,58,.55)}
-  .gallery .thumb{aspect-ratio:16/9.5;overflow:hidden}
-  .gallery img{display:block;width:100%;height:100%;object-fit:cover;object-position:left top;transition:transform .25s ease}
-  .gallery a:hover img{transform:scale(1.025)}
+  .gallery a{cursor:zoom-in}
+  .gallery .thumb{overflow:hidden}
+  .gallery img{display:block;width:100%;height:auto;transition:transform .25s ease}
+  .gallery a:hover img{transform:scale(1.02)}
+
+  dialog.lightbox{border:1px solid var(--border);border-radius:14px;padding:0;background:var(--surface);
+     max-width:min(96vw,1500px);box-shadow:0 30px 90px rgba(0,0,0,.6)}
+  dialog.lightbox::backdrop{background:rgba(8,10,14,.82)}
+  dialog.lightbox figure{margin:0}
+  dialog.lightbox img{display:block;max-width:100%;max-height:82vh;width:auto;height:auto;margin:0 auto}
+  dialog.lightbox figcaption{display:flex;justify-content:space-between;align-items:center;gap:14px;
+     padding:11px 16px;border-top:1px solid var(--border);font-size:13px;color:var(--muted)}
+  dialog.lightbox .lb-close{font:inherit;font-weight:700;color:var(--accent-text);background:none;
+     border:1px solid var(--border);border-radius:8px;padding:5px 12px;cursor:pointer}
+  dialog.lightbox .lb-close:hover{border-color:var(--accent-text)}
   .gallery figcaption{display:flex;justify-content:space-between;align-items:center;gap:10px;
      padding:10px 14px;border-top:1px solid var(--border);font-size:12.5px;color:var(--muted)}
   .gallery figcaption .idx{font-family:var(--mono);color:var(--accent-text);font-weight:700}
@@ -198,7 +210,7 @@
     </div>
     <div class="microcopy">Free to try · optional Survey Pro subscription</div>
   </div>
-  <div class="hero-shot"><img src="assets/desktop_scanner.png" alt="AP-Scout Pro on Windows — real-time Wi-Fi scanner grouped by SSID with signal, channel and vendor details" width="1920" height="1080"></div>
+  <a class="hero-shot" href="assets/desktop_scanner.png" target="_blank" rel="noopener"><img src="assets/desktop_scanner.png" alt="AP-Scout Pro on Windows — real-time Wi-Fi scanner grouped by SSID with signal, channel and vendor details" width="1920" height="1080"></a>
 </div>
 </div>
 
@@ -328,5 +340,34 @@
 </footer>
 
 </div>
+
+<dialog class="lightbox" id="lightbox" aria-label="Full-size screenshot">
+  <figure>
+    <img src="" alt="">
+    <figcaption><span class="lb-cap"></span><button class="lb-close" type="button">Close ✕</button></figcaption>
+  </figure>
+</dialog>
+
+<script>
+(function(){
+  var lb = document.getElementById('lightbox');
+  if (!lb || typeof lb.showModal !== 'function') return; // fallback: links open in a new tab
+  var img = lb.querySelector('img'), cap = lb.querySelector('.lb-cap');
+  document.querySelectorAll('a.hero-shot, .gallery a').forEach(function(a){
+    a.addEventListener('click', function(e){
+      e.preventDefault();
+      var thumb = a.querySelector('img');
+      img.src = a.getAttribute('href');
+      img.alt = thumb ? thumb.alt : '';
+      var capEl = a.querySelector('figcaption span:last-child');
+      cap.textContent = capEl ? capEl.textContent.replace(' ↗','') : img.alt;
+      lb.showModal();
+    });
+  });
+  lb.addEventListener('click', function(e){ if (e.target === lb) lb.close(); });
+  lb.querySelector('.lb-close').addEventListener('click', function(){ lb.close(); });
+  lb.addEventListener('close', function(){ img.src = ''; });
+})();
+</script>
 </body>
 </html>

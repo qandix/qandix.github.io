@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy Policy — AP-Scout Pro for Windows</title>
+<meta name="description" content="Privacy policy for AP-Scout Pro for Windows. No backend, no telemetry — data stays on your device.">
+<link rel="canonical" href="https://qandix.github.io/privacy-windows.html">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='58' r='12' fill='%23F0A63A'/%3E%3Cpath d='M26 46a34 34 0 0 1 48 0M14 34a51 51 0 0 1 72 0' stroke='%23F0A63A' stroke-width='9' fill='none' stroke-linecap='round'/%3E%3C/svg%3E">
+<style>
+  :root{--bg:#0E1116;--surface:#161B22;--border:#2A3240;--ink:#E7ECF2;--muted:#97A2B0;--accent:#F0A63A;--accent-text:#F0A63A}
+  @media (prefers-color-scheme: light){:root{--bg:#F5F7F9;--surface:#FFFFFF;--border:#DCE2E8;--ink:#161B22;--muted:#5B6672;--accent:#E89B2B;--accent-text:#B26A00}}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);line-height:1.6;
+       font-family:"Segoe UI Variable Text","Segoe UI",system-ui,-apple-system,Roboto,sans-serif}
+  .wrap{max-width:840px;margin:0 auto;padding:28px 22px 70px}
+  a{color:var(--accent-text)}
+  .home{font-size:13.5px;text-decoration:none;font-weight:600}
+  h1{font-size:clamp(24px,4vw,32px);font-weight:800;letter-spacing:-.02em;margin:26px 0 4px}
+  h2{font-size:19px;font-weight:700;margin:30px 0 8px}
+  p{margin:8px 0;font-size:14.5px}
+  p.li{margin:5px 0 5px 8px}
+  hr{border:none;border-top:1px solid var(--border);margin:26px 0}
+  code{font-family:Consolas,ui-monospace,monospace;font-size:13px;background:var(--surface);
+       border:1px solid var(--border);border-radius:5px;padding:1px 5px}
+  .tablewrap{overflow-x:auto;margin:10px 0}
+  table{border-collapse:collapse;width:100%;font-size:13.5px;min-width:560px}
+  th,td{border:1px solid var(--border);padding:8px 11px;text-align:left;vertical-align:top}
+  th{background:var(--surface);font-weight:700}
+</style>
+</head>
+<body>
+<div class="wrap">
+<a class="home" href="/">← AP-Scout Pro</a>
+<h1>Privacy Policy — AP-Scout Pro for Windows</h1>
+<p><b>Product:</b> AP-Scout Pro (Windows desktop)</p>
+<p><b>Developer:</b> Qandix</p>
+<p><b>Contact:</b> support@qandix.com</p>
+<p><b>Last updated:</b> 2026-08-01</p>
+<hr>
+<h2>Privacy Policy</h2>
+<p><b>AP-Scout Pro for Windows</b> ("the App") is developed by Qandix. This Privacy Policy explains what information the App accesses, how it is used, and how it is protected.</p>
+<hr>
+<h2>1. Information We Collect</h2>
+<p>The App accesses the following data <b>solely on your device</b>:</p>
+<div class="tablewrap"><table>
+<tr><th>Data</th><th>Purpose</th><th>Stored</th></tr>
+<tr><td>Wi-Fi scan data (BSSID, SSID, RSSI, channel, band)</td><td>Scan, RSSI/SNR History, Tracking, Survey, Roaming Analysis</td><td>Locally on device only</td></tr>
+<tr><td>Beacon metadata broadcast by APs (advertised AP name, vendor fields)</td><td>Decoded passively on-device from frames APs already broadcast; shown as the 📡 AP name and included in exports</td><td>In-memory only; written out only into export files you create</td></tr>
+<tr><td>Floor plan images</td><td>Survey — floor-plan background imported by you via the Windows file picker</td><td>Locally on device only</td></tr>
+<tr><td>Survey session data</td><td>Export and review</td><td>Locally on device only</td></tr>
+<tr><td>AP Database (CSV import)</td><td>Display hostnames instead of BSSIDs</td><td>Locally on device only</td></tr>
+<tr><td>Network Tools activity</td><td>On-demand diagnostics (Ping, DNS, Traceroute, Port Check, HTTP Check, TLS Inspector, TCP Throughput, Latency Trend, Subnet Calculator, Wake-on-LAN, NTP, ARP Table, Network Overview, LAN Discovery, LAN Devices) to hosts/networks you specify</td><td>Not stored; not transmitted off-device</td></tr>
+<tr><td>Diagnostic activity logs (app events only — no personal data)</td><td>Field diagnostics via the Logs menu — records the App's own activity</td><td>Locally on device only, encrypted (AES-256-GCM); view, export, or delete anytime via the Logs menu</td></tr>
+</table></div>
+<p><b>We do not collect, transmit, or store any personal data on external servers, with one optional exception you control:</b> the Network Overview "Public IP" lookup contacts ipinfo.io only when you run it — see <i>Third-Party Services</i> below.</p>
+<p><b>Network Tools.</b> The Network Tools require explicit one-time consent before first use. Every operation is initiated manually by you and is directed only at the hosts/addresses/networks you specify; the App makes no automated or background network requests. Results and any read of the local ARP neighbor cache are shown on-device and are neither stored nor transmitted off-device.</p>
+<hr>
+<h2>2. Third-Party Services</h2>
+<p>The App does <b>not</b> integrate analytics SDKs, advertising networks, social media SDKs, or cloud services. All third-party code is open-source libraries (Apache POI, zip4j, JNA, Compose Multiplatform) running entirely on-device.</p>
+<p><b>Public IP lookup (optional).</b> When you run "Look up Public IP" in Network Overview, the App makes a single HTTPS request to <b>ipinfo.io</b> (fallback <b>api.ipify.org</b>) to show your public IP address, ISP and approximate location. Those services necessarily see your IP address, governed by their own privacy policies (<a href="https://ipinfo.io/privacy-policy" rel="noopener">ipinfo.io/privacy-policy</a>). This is the only feature that contacts an external service, it never runs on its own, and no other personal data is sent.</p>
+<p><b>Microsoft Store billing.</b> Optional paid features (the Survey Pro monthly subscription and Store add-ons) are purchased through the <b>Microsoft Store</b>, governed by Microsoft's Privacy Statement (https://privacy.microsoft.com). We do not receive, store, or process any payment card information; all billing is handled exclusively by Microsoft. The App verifies your purchase status through the Microsoft Store services on your device.</p>
+<hr>
+<h2>3. System Access Used</h2>
+<p>The App is a desktop application and uses the following Windows facilities:</p>
+<div class="tablewrap"><table>
+<tr><th>Access</th><th>Why</th></tr>
+<tr><td>Native WLAN API (Wi-Fi adapter)</td><td>Scan for Wi-Fi Access Points and read scan results</td></tr>
+<tr><td>Windows Location setting</td><td>Windows may require Location access to be enabled for Wi-Fi scan results to be returned to apps</td></tr>
+<tr><td>Network sockets</td><td>Network Tools you run manually (Ping, DNS, Port Check, …)</td></tr>
+<tr><td>File system (<code>%APPDATA%\AP-Scout Pro\</code>)</td><td>The App's own private data folder (databases, surveys, logs, exports)</td></tr>
+<tr><td>Windows file picker</td><td>Importing CSV inventories and floor-plan images you select</td></tr>
+</table></div>
+<p>No data leaves your device except exports you share yourself and the optional Public IP lookup above.</p>
+<hr>
+<h2>4. Data Storage and Security</h2>
+<p class="li">• All app data is stored under the App's data folder <code>%APPDATA%\AP-Scout Pro\</code></p>
+<p class="li">• No cloud sync, no remote backup</p>
+<p class="li">• Exports (CSV / Excel / ZIP, including the bulk Survey export that mirrors your Project ▸ Site ▸ Building ▸ Floor tree) are written on your device and leave it only when you share them yourself. Excel and ZIP exports can be password-protected (AES-256); passwords are never saved.</p>
+<p class="li">• The AP Database is encrypted on-device using AES-256-GCM with PBKDF2 key derivation (600,000 iterations); the key is derived from your passphrase and held only in memory.</p>
+<p class="li">• Diagnostic activity logs are stored encrypted (AES-256-GCM) with a device-internal key protected by <b>Windows Data Protection API (DPAPI)</b> under your Windows user account; they contain app events only (no personal data), never leave the device unless you export them, and can be exported as plain TXT or a password-protected AES-256 ZIP.</p>
+<p class="li">• Uninstalling the App removes the installed program. For Microsoft Store (MSIX) installs, Windows keeps the App's data inside the app's package profile and removes it as part of uninstall; any remaining data can also be deleted manually under <code>%APPDATA%\AP-Scout Pro\</code>.</p>
+<hr>
+<h2>5. Subscription Data</h2>
+<p>The Survey paid features (floor-plan background, on-map point placement, AP Check Points, point aliases, and up to 5,000 points) require the optional <b>Survey Pro</b> monthly subscription through the Microsoft Store. We do not collect or store payment card information, billing address, or purchase history beyond what the Microsoft Store provides to verify purchase status on your device.</p>
+<hr>
+<h2>6. Children's Privacy</h2>
+<p>This App is designed for professional network engineers and is <b>not intended for use by children under 13</b>.</p>
+<hr>
+<h2>7. Changes to This Policy</h2>
+<p>We may update this Privacy Policy from time to time. Changes will be posted at the same URL with an updated "Last updated" date.</p>
+<hr>
+<h2>8. Contact</h2>
+<p><b>Email:</b> support@qandix.com</p>
+<hr>
+<p><i>Last updated: 2026-08-01 | AP-Scout Pro for Windows (Microsoft Store package 1.0.18.0)</i></p>
+</div>
+</body>
+</html>

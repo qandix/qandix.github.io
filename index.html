@@ -3,73 +3,162 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>AP-Scout Pro — Enterprise Wi-Fi AP Scanner, Site Survey &amp; Encrypted Network Toolkit</title>
-<meta name="description" content="Professional Wi-Fi scanner, interference analysis, site survey and encrypted network toolkit for engineers on Windows. No ads, no analytics — everything stays on your device.">
-<meta property="og:title" content="AP-Scout Pro — Wi-Fi Scanner &amp; Site Survey for Engineers">
-<meta property="og:description" content="Real-time AP scanning across 2.4/5/6 GHz, interference analysis, floor-plan site survey, roaming analysis and a full network toolkit on Windows. On-device only.">
+<title>AP-Scout Pro — Wi-Fi Site Survey &amp; AP Scanner for Windows</title>
+<meta name="description" content="Professional Wi-Fi site survey & AP scanner for Windows. Scan 2.4/5/6 GHz, rank interference, floor-plan surveys, AES-256 encrypted exports. Free to try.">
+<link rel="canonical" href="https://qandix.github.io/">
+<meta name="theme-color" content="#0E1116" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#F5F7F9" media="(prefers-color-scheme: light)">
+<meta property="og:title" content="AP-Scout Pro — Wi-Fi Site Survey &amp; AP Scanner for Windows">
+<meta property="og:description" content="Scan every AP across 2.4/5/6 GHz, rank interference, run floor-plan site surveys and export AES-256 protected reports. Data stays on your device. Free to try.">
 <meta property="og:type" content="website">
+<meta property="og:url" content="https://qandix.github.io/">
+<meta property="og:image" content="https://qandix.github.io/assets/desktop_scanner.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='58' r='12' fill='%23F0A63A'/%3E%3Cpath d='M26 46a34 34 0 0 1 48 0M14 34a51 51 0 0 1 72 0' stroke='%23F0A63A' stroke-width='9' fill='none' stroke-linecap='round'/%3E%3C/svg%3E">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "AP-Scout Pro",
+  "operatingSystem": "Windows 10, Windows 11",
+  "applicationCategory": "UtilitiesApplication",
+  "description": "Professional Wi-Fi AP scanner, interference analysis, floor-plan site survey, roaming analysis and network toolkit for Windows. Data stays on the device; AES-256 encrypted exports.",
+  "url": "https://qandix.github.io/",
+  "installUrl": "https://apps.microsoft.com/detail/9MVSCDKG46B1",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD",
+    "description": "Free to try; optional Survey Pro monthly subscription for floor-plan survey features." },
+  "publisher": { "@type": "Organization", "name": "QANDIX", "email": "support@qandix.com" },
+  "screenshot": "https://qandix.github.io/assets/desktop_scanner.png",
+  "inLanguage": ["en","ar","de","es","fr","id","ja","ko","ms","pt-BR","ru","th","vi","zh-CN","zh-TW"]
+}
+</script>
 <style>
   :root{
     --bg:#0E1116; --surface:#161B22; --surface2:#1C2230; --border:#2A3240;
-    --ink:#E7ECF2; --muted:#97A2B0; --accent:#34C3D4; --accent-ink:#08222a;
-    --good:#4FCB84;
+    --ink:#E7ECF2; --muted:#97A2B0;
+    --accent:#F0A63A; --accent-hi:#F7BC5E; --accent-ink:#231303; --accent-dim:rgba(240,166,58,.14);
+    --accent-text:#F0A63A; --good:#4FCB84;
+    --mono:"Cascadia Code",Consolas,ui-monospace,"SF Mono",monospace;
   }
   @media (prefers-color-scheme: light){
     :root{ --bg:#F5F7F9; --surface:#FFFFFF; --surface2:#EEF1F4; --border:#DCE2E8;
-           --ink:#161B22; --muted:#5B6672; --accent:#0C8FA3; --accent-ink:#ffffff; --good:#1E9E5A; }
+           --ink:#161B22; --muted:#5B6672;
+           --accent:#E89B2B; --accent-hi:#F0A63A; --accent-ink:#241500; --accent-dim:rgba(232,155,43,.12);
+           --accent-text:#B26A00; --good:#1E9E5A; }
   }
   *{box-sizing:border-box}
-  body{margin:0;background:var(--bg);color:var(--ink);
-       font-family:"Segoe UI Variable Text","Segoe UI",system-ui,-apple-system,Roboto,sans-serif;line-height:1.55}
+  body{margin:0;color:var(--ink);line-height:1.55;
+       font-family:"Segoe UI Variable Text","Segoe UI",system-ui,-apple-system,Roboto,sans-serif;
+       background:radial-gradient(1100px 520px at 72% -8%, rgba(240,166,58,.06), transparent 62%), var(--bg)}
   .wrap{max-width:1080px;margin:0 auto;padding:0 22px}
-  header{padding:20px 0;display:flex;align-items:center;justify-content:space-between;gap:12px}
+  a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
+  @media (prefers-reduced-motion: reduce){*{transition:none!important}.gallery a:hover img{transform:none!important}}
+
+  header{padding:24px 0;display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap}
   .brand{font-weight:800;letter-spacing:-.02em;font-size:18px}
-  .brand span{color:var(--accent)}
-  nav a{color:var(--muted);text-decoration:none;margin-left:18px;font-size:14px}
+  .brand span{color:var(--accent-text)}
+  nav{display:flex;align-items:center;flex-wrap:wrap;gap:2px}
+  nav a{color:var(--muted);text-decoration:none;font-size:13.5px;padding:6px 9px}
   nav a:hover{color:var(--ink)}
+  nav a.nav-cta{color:var(--accent-text);font-weight:700}
 
-  .hero{padding:44px 0 30px;display:grid;grid-template-columns:1.05fr .95fr;gap:36px;align-items:center}
+  .hero-zone{position:relative}
+  .hero-zone::before{content:"";position:absolute;inset:0;pointer-events:none;
+    background:linear-gradient(rgba(151,162,176,.05) 1px, transparent 1px),
+               linear-gradient(90deg, rgba(151,162,176,.05) 1px, transparent 1px);
+    background-size:44px 44px;
+    -webkit-mask-image:linear-gradient(180deg, rgba(0,0,0,.9), transparent 85%);
+    mask-image:linear-gradient(180deg, rgba(0,0,0,.9), transparent 85%)}
+  .hero{position:relative;padding:56px 0 64px;display:grid;grid-template-columns:1.05fr .95fr;gap:40px;align-items:center}
   @media(max-width:860px){.hero{grid-template-columns:1fr}}
-  h1{font-size:clamp(28px,4.5vw,42px);font-weight:800;letter-spacing:-.02em;margin:0 0 14px;text-wrap:balance}
-  .tagline{color:var(--muted);font-size:17px;margin:0 0 22px;max-width:52ch}
+  .eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.14em;color:var(--accent-text);font-weight:600;margin-bottom:14px}
+  h1{font-size:clamp(30px,4.8vw,50px);font-weight:800;letter-spacing:-.025em;line-height:1.08;margin:0 0 16px;text-wrap:balance;
+     font-family:"Segoe UI Variable Display","Segoe UI",system-ui,sans-serif}
+  h1 .dim{color:var(--muted);font-weight:700}
+  .tagline{color:var(--muted);font-size:16.5px;margin:0 0 20px;max-width:52ch}
+  .trust{display:flex;flex-wrap:wrap;gap:9px;margin:0 0 26px}
+  .trust span{font-family:var(--mono);font-size:12px;color:var(--good);background:var(--surface);
+     border:1px solid var(--border);border-radius:99px;padding:5px 12px;font-weight:600;display:inline-flex;align-items:center;gap:6px}
   .badges{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
-  .store-btn{display:inline-flex;align-items:center;gap:10px;background:var(--surface);border:1px solid var(--border);
-     border-radius:12px;padding:11px 18px;text-decoration:none;color:var(--ink);font-weight:600;font-size:14.5px;
-     transition:border-color .15s, transform .15s}
-  .store-btn:hover{border-color:var(--accent);transform:translateY(-1px)}
-  .store-btn small{display:block;font-weight:400;color:var(--muted);font-size:11px;line-height:1.2}
-  .store-btn .logo{font-size:22px}
-  .hero-shot{border:1px solid var(--border);border-radius:14px;overflow:hidden;box-shadow:0 12px 40px rgba(0,0,0,.35)}
-  .hero-shot img{display:block;width:100%;height:auto}
+  .store-btn{display:inline-flex;align-items:center;gap:11px;background:var(--accent);color:var(--accent-ink);
+     border-radius:10px;padding:13px 20px;text-decoration:none;font-weight:700;font-size:15px;line-height:1.25;
+     box-shadow:0 4px 20px rgba(240,166,58,.28);transition:background .15s,box-shadow .15s,transform .15s}
+  .store-btn:hover{background:var(--accent-hi);transform:translateY(-1px);box-shadow:0 6px 28px rgba(240,166,58,.38)}
+  .store-btn small{display:block;font-weight:500;color:rgba(35,19,3,.75);font-size:12px;line-height:1.3}
+  .microcopy{font-size:12.5px;color:var(--muted);margin-top:10px;font-family:var(--mono)}
+  .hero-shot{border-radius:16px;overflow:hidden;border:1px solid var(--border);aspect-ratio:16/10.2;
+     box-shadow:0 0 0 1px rgba(240,166,58,.12), 0 24px 60px -20px rgba(0,0,0,.6), 0 8px 24px rgba(0,0,0,.4)}
+  .hero-shot img{display:block;width:100%;height:100%;object-fit:cover;object-position:left top}
 
-  .trust{display:flex;flex-wrap:wrap;gap:10px;margin:8px 0 6px}
-  .trust span{font-size:12.5px;color:var(--good);background:var(--surface);border:1px solid var(--border);
-     border-radius:99px;padding:5px 12px;font-weight:600}
+  .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:6px 0 0}
+  .stat{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:16px 16px 13px;text-align:center}
+  .stat .n{font-family:var(--mono);font-size:24px;font-weight:700;color:var(--accent-text);letter-spacing:-.02em}
+  .stat .l{font-size:11.5px;color:var(--muted);margin-top:3px;line-height:1.35}
 
-  section{padding:38px 0}
-  h2{font-size:24px;font-weight:800;letter-spacing:-.01em;margin:0 0 6px}
-  .lead{color:var(--muted);margin:0 0 24px;max-width:70ch}
+  section{padding:72px 0}
+  section + section{border-top:1px solid var(--border)}
+  .sec-eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.14em;color:var(--accent-text);font-weight:600;margin:0 0 10px}
+  h2{font-size:clamp(22px,3vw,30px);font-weight:800;letter-spacing:-.015em;margin:0 0 8px}
+  .lead{color:var(--muted);margin:0 0 26px;max-width:70ch}
+
+  .who{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:10px;margin-top:4px}
+  .who div{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:12px 14px;font-size:13.5px;color:var(--muted)}
+  .who b{color:var(--ink);display:block;margin-bottom:2px;font-size:13.5px}
+
   .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px}
-  .card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:16px 17px}
-  .card h3{margin:0 0 6px;font-size:15px;font-weight:700}
-  .card p{margin:0;color:var(--muted);font-size:13.5px}
-  .card .ic{font-size:20px;margin-bottom:8px;display:block}
+  .card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:20px;transition:border-color .15s}
+  .card:hover{border-color:rgba(240,166,58,.45)}
+  .card .ic{width:36px;height:36px;border-radius:8px;background:var(--accent-dim);border:1px solid var(--border);
+     display:grid;place-items:center;margin-bottom:10px}
+  .card .ic svg{stroke:var(--accent-text);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+  .card h3{margin:0 0 6px;font-size:15.5px;font-weight:700}
+  .card p{margin:0;color:var(--muted);font-size:14px;line-height:1.55}
 
-  .gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:14px}
+  .steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px}
+  .step{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:20px}
+  .step .num{font-family:var(--mono);color:var(--accent-text);font-weight:700;font-size:13px;margin-bottom:8px}
+  .step h3{margin:0 0 6px;font-size:15.5px}
+  .step p{margin:0;color:var(--muted);font-size:14px}
+  .midcta{text-align:center;margin-top:30px;font-size:15px}
+  .midcta a{color:var(--accent-text);font-weight:700;text-decoration:none}
+  .midcta a:hover{text-decoration:underline}
+
+  .gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(420px,1fr));gap:18px}
+  @media(max-width:520px){.gallery{grid-template-columns:1fr}}
   .gallery a{text-decoration:none;color:inherit}
-  .gallery figure{margin:0;border:1px solid var(--border);border-radius:12px;overflow:hidden;background:var(--surface);
-     transition:border-color .15s, transform .15s}
-  .gallery a:hover figure{border-color:var(--accent);transform:translateY(-2px)}
-  .gallery img{display:block;width:100%;height:auto}
-  .gallery figcaption{font-size:12px;color:var(--muted);padding:9px 12px}
+  .gallery figure{margin:0;border:1px solid var(--border);border-radius:12px;overflow:hidden;background:var(--surface);transition:border-color .15s}
+  .gallery a:hover figure{border-color:rgba(240,166,58,.55)}
+  .gallery .thumb{aspect-ratio:16/9.5;overflow:hidden}
+  .gallery img{display:block;width:100%;height:100%;object-fit:cover;object-position:left top;transition:transform .25s ease}
+  .gallery a:hover img{transform:scale(1.025)}
+  .gallery figcaption{display:flex;justify-content:space-between;align-items:center;gap:10px;
+     padding:10px 14px;border-top:1px solid var(--border);font-size:12.5px;color:var(--muted)}
+  .gallery figcaption .idx{font-family:var(--mono);color:var(--accent-text);font-weight:700}
 
-  .privacy-band{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:26px 28px}
-  .privacy-band h2{margin-top:0}
-  .privacy-band ul{margin:0;padding-left:20px;color:var(--muted);font-size:14px}
-  .privacy-band li{margin:6px 0}
-  .privacy-band b{color:var(--ink)}
+  .band{background:linear-gradient(180deg,var(--surface),var(--surface2));border:1px solid var(--border);
+     border-radius:16px;padding:34px 38px;position:relative;overflow:hidden}
+  .band::before{content:"";position:absolute;inset:0;pointer-events:none;
+     background:radial-gradient(400px 200px at 100% 0%, var(--accent-dim), transparent 70%)}
+  .band > *{position:relative}
+  .kicker{font-family:var(--mono);font-size:13px;color:var(--accent-text);margin:2px 0 18px}
+  .pgrid{display:grid;grid-template-columns:1fr 1fr;gap:12px 28px}
+  @media(max-width:700px){.pgrid{grid-template-columns:1fr}}
+  .pgrid div{font-size:14px;color:var(--muted)}
+  .pgrid b{color:var(--ink)}
+  .pgrid svg{stroke:var(--accent-text);fill:none;stroke-width:1.6;vertical-align:-2px;margin-right:7px}
 
-  footer{border-top:1px solid var(--border);margin-top:30px;padding:26px 0 40px;color:var(--muted);font-size:13px}
+  details{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:0;margin-bottom:10px}
+  summary{cursor:pointer;font-weight:600;font-size:14.5px;padding:14px 17px;list-style:none;display:flex;justify-content:space-between;gap:10px}
+  summary::-webkit-details-marker{display:none}
+  summary::after{content:"+";font-family:var(--mono);color:var(--accent-text);font-weight:700}
+  details[open] summary::after{content:"–"}
+  details p{margin:0;padding:0 17px 15px;color:var(--muted);font-size:14px}
+
+  .final{position:relative;text-align:center;padding:70px 0 76px}
+  .final .badges{justify-content:center;margin-top:22px}
+  .final .microcopy{margin-top:14px}
+
+  footer{border-top:1px solid var(--border);padding:26px 0 42px;color:var(--muted);font-size:13px}
   footer .cols{display:flex;flex-wrap:wrap;gap:24px;justify-content:space-between;align-items:flex-start}
   footer a{color:var(--muted)}
   footer a:hover{color:var(--ink)}
@@ -83,73 +172,150 @@
   <nav>
     <a href="#features">Features</a>
     <a href="#gallery">Gallery</a>
+    <a href="#pricing">Pricing</a>
+    <a href="#faq">FAQ</a>
     <a href="#privacy">Privacy</a>
-    <a href="https://qandix.github.io/ap-scout-pro/">Privacy Policy</a>
+    <a class="nav-cta" href="https://apps.microsoft.com/detail/9MVSCDKG46B1" rel="noopener">Get it free →</a>
   </nav>
 </header>
 
+<div class="hero-zone">
 <div class="hero">
   <div>
-    <h1>Enterprise Wi-Fi AP Scanner, Site Survey &amp; Encrypted Network Toolkit</h1>
-    <p class="tagline">Professional-grade Wi-Fi analysis for engineers — real-time AP scanning across
-      2.4 / 5 / 6 GHz, interference ranking, floor-plan site surveys, roaming analysis and a full
-      network toolkit. On your Windows laptop, right where the site visit happens.</p>
+    <div class="eyebrow">FOR NETWORK ENGINEERS · WINDOWS DESKTOP</div>
+    <h1>Professional Wi-Fi site analysis. <span class="dim">Without the enterprise price tag.</span></h1>
+    <p class="tagline">Scan every AP across 2.4 / 5 / 6 GHz, rank interference, run floor-plan site
+      surveys and verify the network with 12 built-in tools — on the Windows laptop you already
+      carry. Free to try on the Microsoft Store.</p>
     <div class="trust">
-      <span>✔ No ads</span><span>✔ No analytics</span><span>✔ Data stays on your device</span><span>✔ AES-256 encrypted exports</span>
+      <span aria-hidden="true">✓ No ads</span><span aria-hidden="true">✓ No analytics</span><span>✓ Data stays on your device</span><span>✓ AES-256 exports</span>
     </div>
-    <p></p>
     <div class="badges">
       <a class="store-btn" href="https://apps.microsoft.com/detail/9MVSCDKG46B1" rel="noopener">
-        <span class="logo">🪟</span><span>Get it on<br><b>Microsoft Store</b><small>Windows 10 / 11</small></span>
+        <svg width="22" height="22" viewBox="0 0 21 21" aria-hidden="true"><rect x="0" y="0" width="10" height="10" fill="#F25022"/><rect x="11" y="0" width="10" height="10" fill="#7FBA00"/><rect x="0" y="11" width="10" height="10" fill="#00A4EF"/><rect x="11" y="11" width="10" height="10" fill="#FFB900"/></svg>
+        <span>Get it on<br><b>Microsoft Store</b><small>Windows 10 / 11</small></span>
       </a>
     </div>
+    <div class="microcopy">Free to try · optional Survey Pro subscription</div>
   </div>
   <div class="hero-shot"><img src="assets/desktop_scanner.png" alt="AP-Scout Pro on Windows — real-time Wi-Fi scanner grouped by SSID with signal, channel and vendor details" width="1920" height="1080"></div>
 </div>
+</div>
 
-<section id="features">
-  <h2>Built for field engineers</h2>
-  <p class="lead">Everything the site visit needs, in one tool — scan, analyze, survey, verify, export.</p>
-  <div class="grid">
-    <div class="card"><span class="ic">📡</span><h3>Real-time AP scanner</h3><p>SSID, BSSID, RSSI, band, channel, width and vendor across 2.4 / 5 / 6 GHz — flat or grouped-by-SSID views with AP-Database name matching.</p></div>
-    <div class="card"><span class="ic">📶</span><h3>Interference analysis</h3><p>Congested channels ranked worst-first (co-channel + overlapping), in-app and in every export.</p></div>
-    <div class="card"><span class="ic">🗺️</span><h3>Site Survey</h3><p>Point-by-point capture on a floor-plan background, organised Project &gt; Site &gt; Building &gt; Floor, with per-band export sections.</p></div>
-    <div class="card"><span class="ic">🔀</span><h3>Roaming analysis</h3><p>BSSID transitions on an RSSI timeline with event markers, plus sticky-client detection with an exportable verdict ledger.</p></div>
-    <div class="card"><span class="ic">📈</span><h3>Signal history &amp; tracking</h3><p>Per-AP RSSI / estimated-SNR history graphs and target-AP tracking as you move — exportable to CSV and Excel.</p></div>
-    <div class="card"><span class="ic">🛰️</span><h3>Beacon translation</h3><p>Per-AP beacon decode — identity, radio, capabilities, vendor fields and the raw IE dump, all copyable. Detects Wi-Fi 7 (802.11be): 320 MHz, MLO, FTM/RTT.</p></div>
-    <div class="card"><span class="ic">🧰</span><h3>Network toolkit</h3><p>Ping, DNS, Traceroute, Port Check, HTTP, TLS Inspector, TCP Throughput, Latency Trend, Subnet Calculator, Wake-on-LAN, NTP, ARP Table.</p></div>
-    <div class="card"><span class="ic">🔐</span><h3>Encrypted by default</h3><p>AES-256-GCM encrypted AP Database, optional AES-256 password on all CSV / Excel / ZIP exports, encrypted on-device logs.</p></div>
-    <div class="card"><span class="ic">🌏</span><h3>Ready for the field</h3><p>15 languages, light &amp; dark themes, hover help on every control. Optional Survey Pro subscription for floor-plan surveys up to 5,000 points.</p></div>
+<div class="stats" aria-label="Key numbers">
+  <div class="stat"><div class="n">3</div><div class="l">bands scanned<br>2.4 / 5 / 6 GHz</div></div>
+  <div class="stat"><div class="n">12</div><div class="l">network tools<br>built in</div></div>
+  <div class="stat"><div class="n">5,000</div><div class="l">survey points<br>per floor plan</div></div>
+  <div class="stat"><div class="n">AES-256</div><div class="l">encryption on<br>database &amp; exports</div></div>
+  <div class="stat"><div class="n">15</div><div class="l">languages</div></div>
+</div>
+
+<section>
+  <div class="sec-eyebrow">01 · WHO IT'S FOR</div>
+  <h2>Made for the people who get paged about Wi-Fi</h2>
+  <div class="who">
+    <div><b>Field engineers</b>running site surveys and deployment verification</div>
+    <div><b>MSPs &amp; IT consultants</b>who need a report the customer can open</div>
+    <div><b>Network admins</b>chasing interference, roaming and sticky-client complaints</div>
+    <div><b>Wireless professionals</b>who troubleshoot Wi-Fi for a living — not as a hobby</div>
   </div>
 </section>
 
+<section id="features">
+  <div class="sec-eyebrow">02 · CAPABILITIES</div>
+  <h2>Built for the site visit</h2>
+  <p class="lead">Everything the field job needs, in one tool — scan, analyze, survey, verify, export.</p>
+  <div class="grid">
+    <div class="card"><span class="ic"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="16" r="2.2"/><path d="M7.5 12.5a6.4 6.4 0 0 1 9 0M4.5 9.2a10.6 10.6 0 0 1 15 0"/></svg></span><h3>Real-time AP scanner</h3><p>SSID, BSSID, RSSI, band, channel, width and vendor across 2.4 / 5 / 6 GHz — flat or grouped-by-SSID views with AP-Database name matching.</p></div>
+    <div class="card"><span class="ic"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20V10M9.3 20V4M14.6 20v-9M20 20V7"/></svg></span><h3>Interference analysis</h3><p>Congested channels ranked worst-first (co-channel + overlapping), in-app and in every export.</p></div>
+    <div class="card"><span class="ic"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-6.5-5.4-6.5-10.2A6.5 6.5 0 0 1 12 4.5a6.5 6.5 0 0 1 6.5 6.3C18.5 15.6 12 21 12 21z"/><circle cx="12" cy="10.8" r="2.2"/></svg></span><h3>Site Survey</h3><p>Point-by-point capture on a floor-plan background, organised Project &gt; Site &gt; Building &gt; Floor, with per-band export sections.</p></div>
+    <div class="card"><span class="ic"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8h13M14 4.5 17.5 8 14 11.5M20 16H7M10 12.5 6.5 16l3.5 3.5"/></svg></span><h3>Roaming analysis</h3><p>BSSID transitions on an RSSI timeline with event markers, plus sticky-client detection with an exportable verdict ledger.</p></div>
+    <div class="card"><span class="ic"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19h16M4 19V5M7 15l3.5-4 3 2.5L18 8"/></svg></span><h3>Signal history &amp; tracking</h3><p>Per-AP RSSI / estimated-SNR history graphs and target-AP tracking as you move — exportable to CSV and Excel.</p></div>
+    <div class="card"><span class="ic"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M5.5 13.5 12 7a4.6 4.6 0 0 1 6.5 6.5L12 20a9.2 9.2 0 0 1-6.5-6.5zM15 10l1.5-1.5M18.5 3.5 17 5"/></svg></span><h3>Beacon translation</h3><p>Per-AP beacon decode — identity, radio, capabilities, vendor fields and the raw IE dump, all copyable. Detects Wi-Fi 7 (802.11be): 320 MHz, MLO, FTM/RTT.</p></div>
+    <div class="card"><span class="ic"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M14.5 6.5a4 4 0 0 0-5.4 5.2L4 16.8V20h3.2l5.1-5.1a4 4 0 0 0 5.2-5.4L14.6 12l-2.6-2.6z"/></svg></span><h3>Network toolkit</h3><p>Ping, DNS, Traceroute, Port Check, HTTP, TLS Inspector, TCP Throughput, Latency Trend, Subnet Calculator, Wake-on-LAN, NTP, ARP Table.</p></div>
+    <div class="card"><span class="ic"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5 5 6v5c0 4.4 3 8.1 7 9.5 4-1.4 7-5.1 7-9.5V6z"/><rect x="9.5" y="10" width="5" height="4.6" rx="1"/><path d="M10.6 10V8.8a1.4 1.4 0 0 1 2.8 0V10"/></svg></span><h3>Encrypted by default</h3><p>AES-256-GCM encrypted AP Database, optional AES-256 password on all CSV / Excel / ZIP exports, encrypted on-device logs.</p></div>
+    <div class="card"><span class="ic"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M3.5 12h17M12 3.5c2.6 2.4 3.9 5.2 3.9 8.5S14.6 18.1 12 20.5M12 3.5C9.4 5.9 8.1 8.7 8.1 12s1.3 6.1 3.9 8.5"/></svg></span><h3>Ready for the field</h3><p>15 languages, light &amp; dark themes, hover help on every control. Optional Survey Pro subscription for floor-plan surveys up to 5,000 points.</p></div>
+  </div>
+</section>
+
+<section>
+  <div class="sec-eyebrow">03 · WORKFLOW</div>
+  <h2>One laptop. Three steps.</h2>
+  <div class="steps">
+    <div class="step"><div class="num">STEP 1 — SCAN</div><h3>Open the lid</h3><p>Every AP on 2.4 / 5 / 6 GHz appears in seconds — signal, channel, width, vendor — with congested channels ranked worst-first.</p></div>
+    <div class="step"><div class="num">STEP 2 — SURVEY</div><h3>Walk the site</h3><p>Load the floor plan, walk the site, capture a fresh scan at each check point. Organised Project &gt; Site &gt; Building &gt; Floor.</p></div>
+    <div class="step"><div class="num">STEP 3 — REPORT</div><h3>Hand it over</h3><p>Export CSV / Excel with per-band sections and interference analysis, protected with an optional AES-256 password. Done.</p></div>
+  </div>
+  <div class="midcta"><a href="https://apps.microsoft.com/detail/9MVSCDKG46B1" rel="noopener">Install free from the Microsoft Store →</a> <span style="color:var(--muted)">and try it on your next site visit.</span></div>
+</section>
+
 <section id="gallery">
-  <h2>Gallery</h2>
-  <p class="lead">Every screen, exactly as it ships — click any shot for the full-size view.</p>
+  <div class="sec-eyebrow">04 · GALLERY</div>
+  <h2>Every screen, exactly as it ships</h2>
+  <p class="lead">No mockups, no compositing — click any shot for the full-size view.</p>
   <div class="gallery">
-    <a href="assets/desktop_survey.png" target="_blank" rel="noopener"><figure><img src="assets/desktop_survey.png" alt="Site Survey viewer — captured check points and AP anchors on a floor plan" loading="lazy" width="1920" height="1080"><figcaption>Site Survey — check points &amp; AP anchors on your floor plan</figcaption></figure></a>
-    <a href="assets/gallery_survey_capture.png" target="_blank" rel="noopener"><figure><img src="assets/gallery_survey_capture.png" alt="Live Site Survey capture with point list and progress" loading="lazy" width="1920" height="1080"><figcaption>Live survey capture — point-by-point, honest progress</figcaption></figure></a>
-    <a href="assets/gallery_interference.png" target="_blank" rel="noopener"><figure><img src="assets/gallery_interference.png" alt="Interference analysis — congested channels ranked worst-first" loading="lazy" width="1920" height="1080"><figcaption>Interference — congested channels ranked worst-first</figcaption></figure></a>
-    <a href="assets/gallery_spectrum.png" target="_blank" rel="noopener"><figure><img src="assets/gallery_spectrum.png" alt="Channel spectrum view of interference across bands" loading="lazy" width="1920" height="1080"><figcaption>Channel spectrum across 2.4 / 5 / 6 GHz</figcaption></figure></a>
-    <a href="assets/gallery_rssi_history.png" target="_blank" rel="noopener"><figure><img src="assets/gallery_rssi_history.png" alt="Per-AP RSSI and estimated-SNR history graphs" loading="lazy" width="1920" height="1080"><figcaption>RSSI / estimated-SNR history</figcaption></figure></a>
-    <a href="assets/gallery_tracking.png" target="_blank" rel="noopener"><figure><img src="assets/gallery_tracking.png" alt="AP Tracking — target AP signal trend while moving" loading="lazy" width="1920" height="1080"><figcaption>AP Tracking — watch a target AP as you move</figcaption></figure></a>
-    <a href="assets/gallery_roaming.png" target="_blank" rel="noopener"><figure><img src="assets/gallery_roaming.png" alt="Roaming analysis — BSSID transitions on an RSSI timeline" loading="lazy" width="1920" height="1080"><figcaption>Roaming — BSSID transitions on the RSSI timeline</figcaption></figure></a>
-    <a href="assets/gallery_apdb.png" target="_blank" rel="noopener"><figure><img src="assets/gallery_apdb.png" alt="Encrypted AP Database — AP names instead of raw BSSIDs" loading="lazy" width="1920" height="1080"><figcaption>Encrypted AP Database — names instead of BSSIDs</figcaption></figure></a>
-    <a href="assets/gallery_light.png" target="_blank" rel="noopener"><figure><img src="assets/gallery_light.png" alt="Scanner in the light theme" loading="lazy" width="1920" height="1080"><figcaption>Light theme, if that's your thing</figcaption></figure></a>
+    <a href="assets/desktop_survey.png" target="_blank" rel="noopener"><figure><div class="thumb"><img src="assets/desktop_survey.png" alt="Site Survey viewer — captured check points and AP anchors on a floor plan" loading="lazy" width="1920" height="1080"></div><figcaption><span class="idx">S-01</span><span>Site Survey — check points &amp; AP anchors on your floor plan ↗</span></figcaption></figure></a>
+    <a href="assets/gallery_survey_capture.png" target="_blank" rel="noopener"><figure><div class="thumb"><img src="assets/gallery_survey_capture.png" alt="Live Site Survey capture with point list and progress" loading="lazy" width="1920" height="1080"></div><figcaption><span class="idx">S-02</span><span>Live survey capture — point-by-point, honest progress ↗</span></figcaption></figure></a>
+    <a href="assets/gallery_interference.png" target="_blank" rel="noopener"><figure><div class="thumb"><img src="assets/gallery_interference.png" alt="Interference analysis — congested channels ranked worst-first" loading="lazy" width="1920" height="1080"></div><figcaption><span class="idx">S-03</span><span>Interference — channels ranked worst-first ↗</span></figcaption></figure></a>
+    <a href="assets/gallery_spectrum.png" target="_blank" rel="noopener"><figure><div class="thumb"><img src="assets/gallery_spectrum.png" alt="Channel spectrum view of interference across bands" loading="lazy" width="1920" height="1080"></div><figcaption><span class="idx">S-04</span><span>Channel spectrum across 2.4 / 5 / 6 GHz ↗</span></figcaption></figure></a>
+    <a href="assets/gallery_rssi_history.png" target="_blank" rel="noopener"><figure><div class="thumb"><img src="assets/gallery_rssi_history.png" alt="Per-AP RSSI and estimated-SNR history graphs" loading="lazy" width="1920" height="1080"></div><figcaption><span class="idx">S-05</span><span>RSSI / estimated-SNR history ↗</span></figcaption></figure></a>
+    <a href="assets/gallery_tracking.png" target="_blank" rel="noopener"><figure><div class="thumb"><img src="assets/gallery_tracking.png" alt="AP Tracking — target AP signal trend while moving" loading="lazy" width="1920" height="1080"></div><figcaption><span class="idx">S-06</span><span>AP Tracking — watch a target AP as you move ↗</span></figcaption></figure></a>
+    <a href="assets/gallery_roaming.png" target="_blank" rel="noopener"><figure><div class="thumb"><img src="assets/gallery_roaming.png" alt="Roaming analysis — BSSID transitions on an RSSI timeline" loading="lazy" width="1920" height="1080"></div><figcaption><span class="idx">S-07</span><span>Roaming — BSSID transitions on the RSSI timeline ↗</span></figcaption></figure></a>
+    <a href="assets/gallery_apdb.png" target="_blank" rel="noopener"><figure><div class="thumb"><img src="assets/gallery_apdb.png" alt="Encrypted AP Database — AP names instead of raw BSSIDs" loading="lazy" width="1920" height="1080"></div><figcaption><span class="idx">S-08</span><span>Encrypted AP Database — names instead of BSSIDs ↗</span></figcaption></figure></a>
+    <a href="assets/gallery_light.png" target="_blank" rel="noopener"><figure><div class="thumb"><img src="assets/gallery_light.png" alt="Wi-Fi scanner in the light theme" loading="lazy" width="1920" height="1080"></div><figcaption><span class="idx">S-09</span><span>Light theme — full parity ↗</span></figcaption></figure></a>
+  </div>
+</section>
+
+<section id="pricing">
+  <div class="sec-eyebrow">05 · PRICING</div>
+  <div class="band">
+    <h2>Free to try. Pro when the job calls for it.</h2>
+    <p style="color:var(--muted);font-size:14.5px;max-width:72ch;margin:8px 0 0">AP-Scout Pro is free
+      to try from the Microsoft Store. The optional <b style="color:var(--ink)">Survey Pro</b> monthly
+      subscription unlocks floor-plan survey features — surveys up to 5,000 points — at a fraction of
+      the cost of enterprise survey suites. The subscription is managed through your Microsoft account.</p>
   </div>
 </section>
 
 <section id="privacy">
-  <div class="privacy-band">
+  <div class="sec-eyebrow">06 · PRIVACY</div>
+  <div class="band">
     <h2>Your data never leaves the device</h2>
-    <ul>
-      <li><b>No backend.</b> There is no cloud service behind this app — scans, surveys and databases live in the app's private storage only.</li>
-      <li><b>No telemetry.</b> No ads, no analytics, no tracking of any kind.</li>
-      <li><b>Exports are yours.</b> Files leave the device only when you share them — with optional AES-256 password protection.</li>
-      <li>Full details in the <a href="https://qandix.github.io/ap-scout-pro/">Privacy Policy</a>.</li>
-    </ul>
+    <div class="kicker">0 network calls · 0 trackers · 0 accounts</div>
+    <div class="pgrid">
+      <div><svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5 5 6v5c0 4.4 3 8.1 7 9.5 4-1.4 7-5.1 7-9.5V6z"/></svg><b>No backend.</b> There is no cloud service behind this app — scans, surveys and databases live in the app's private storage only.</div>
+      <div><svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M6 6l12 12"/></svg><b>No telemetry.</b> No ads, no analytics, no tracking of any kind.</div>
+      <div><svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="10" width="14" height="9" rx="1.5"/><path d="M8 10V7.5a4 4 0 0 1 8 0V10"/></svg><b>Exports are yours.</b> Files leave the device only when you share them — with optional AES-256 password protection.</div>
+      <div><svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 12.5l4 4 8-9"/></svg><b>This page, too.</b> This website makes no external requests and sets no cookies. Full details in the <a href="https://qandix.github.io/ap-scout-pro/" style="color:var(--accent-text)">Privacy Policy</a>.</div>
+    </div>
   </div>
 </section>
+
+<section id="faq">
+  <div class="sec-eyebrow">07 · FAQ</div>
+  <h2>Questions engineers actually ask</h2>
+  <p class="lead"></p>
+  <details><summary>Is AP-Scout Pro free?</summary><p>It's free to try from the Microsoft Store. An optional Survey Pro monthly subscription unlocks floor-plan survey features (surveys up to 5,000 points), managed through your Microsoft account.</p></details>
+  <details><summary>Do I need special hardware?</summary><p>No. AP-Scout Pro works with your laptop's built-in Wi-Fi adapter. 6 GHz scanning requires an adapter and driver that support it.</p></details>
+  <details><summary>Does it support Wi-Fi 6E and Wi-Fi 7?</summary><p>It scans 2.4, 5 and 6 GHz networks where your adapter supports them, and detects Wi-Fi 7 (802.11be) capabilities — 320 MHz channels, MLO, FTM/RTT — in the per-AP beacon decode.</p></details>
+  <details><summary>Where does my data go?</summary><p>Nowhere. There is no backend and no telemetry. Scans, surveys and the AP Database live in the app's private storage; files leave the device only when you export them — with an optional AES-256 password.</p></details>
+  <details><summary>What's in the network toolkit?</summary><p>Ping, DNS, Traceroute, Port Check, HTTP, TLS Inspector, TCP Throughput, Latency Trend, Subnet Calculator, Wake-on-LAN, NTP and ARP Table.</p></details>
+  <details><summary>Which Windows versions are supported?</summary><p>Windows 10 and Windows 11, installed from the Microsoft Store.</p></details>
+</section>
+
+<div class="final hero-zone">
+  <div class="sec-eyebrow" style="text-align:center">READY WHEN YOU ARE</div>
+  <h2>Try it on your next site visit</h2>
+  <p class="lead" style="margin:10px auto 0;max-width:56ch">Scan, survey and export on the laptop you
+    already carry. Free to try — upgrade to Survey Pro only when the job needs floor-plan surveys.</p>
+  <div class="badges">
+    <a class="store-btn" href="https://apps.microsoft.com/detail/9MVSCDKG46B1" rel="noopener">
+      <svg width="22" height="22" viewBox="0 0 21 21" aria-hidden="true"><rect x="0" y="0" width="10" height="10" fill="#F25022"/><rect x="11" y="0" width="10" height="10" fill="#7FBA00"/><rect x="0" y="11" width="10" height="10" fill="#00A4EF"/><rect x="11" y="11" width="10" height="10" fill="#FFB900"/></svg>
+      <span>Get it on<br><b>Microsoft Store</b><small>Windows 10 / 11</small></span>
+    </a>
+  </div>
+  <div class="microcopy">Windows 10 / 11 · No ads · No telemetry</div>
+</div>
 
 <footer>
   <div class="cols">

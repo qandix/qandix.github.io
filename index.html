@@ -43,7 +43,7 @@
     :root{ --bg:#F5F7F9; --surface:#FFFFFF; --surface2:#EEF1F4; --border:#DCE2E8;
            --ink:#161B22; --muted:#5B6672;
            --accent:#E89B2B; --accent-hi:#F0A63A; --accent-ink:#241500; --accent-dim:rgba(232,155,43,.12);
-           --accent-text:#B26A00; --good:#1E9E5A; }
+           --accent-text:#9E5E00; --good:#1E9E5A; }
   }
   *{box-sizing:border-box}
   body{margin:0;color:var(--ink);line-height:1.55;
@@ -121,6 +121,11 @@
   .midcta{text-align:center;margin-top:30px;font-size:15px}
   .midcta a{color:var(--accent-text);font-weight:700;text-decoration:none}
   .midcta a:hover{text-decoration:underline}
+  /* Links written into running copy (pricing band, FAQ answers) had no colour rule of their own and
+     fell back to the browser default blue, which disappears on the dark ground. Same token as .midcta. */
+  #pricing a,#faq a{color:var(--accent-text);font-weight:600;text-decoration:none}
+  #pricing a:hover,#faq a:hover{text-decoration:underline}
+  #pricing a:focus-visible,#faq a:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:3px}
 
   .gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(420px,1fr));gap:18px}
   @media(max-width:520px){.gallery{grid-template-columns:1fr}}
@@ -306,7 +311,7 @@
       subscription unlocks floor-plan survey features — surveys up to 5,000 points. Current pricing for
       the app and the subscription is always the price shown on the Microsoft Store; the subscription
       is managed through your Microsoft account.</p>
-    <p style="font-size:14.5px;margin:12px 0 0"><a href="survey-pro.html" style="font-weight:700">See exactly what Survey Pro adds →</a></p>
+    <p style="font-size:14.5px;margin:12px 0 0"><a href="survey-pro.html">See exactly what Survey Pro adds →</a></p>
   </div>
 </section>
 

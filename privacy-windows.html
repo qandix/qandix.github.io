@@ -35,7 +35,7 @@
 <h1>Privacy Policy — AP-Scout Pro for Windows</h1>
 <p><b>Product:</b> AP-Scout Pro (Windows desktop)</p>
 <p><b>Developer:</b> Qandix</p>
-<p><b>Contact:</b> support@qandix.com</p>
+<p><b>Contact:</b> <a href="mailto:support@qandix.com">support@qandix.com</a></p>
 <p><b>Last updated:</b> 2026-09-17</p>
 <hr>
 <h2>Privacy Policy</h2>
@@ -43,7 +43,8 @@
 <hr>
 <h2>1. Information We Collect</h2>
 <p>The App accesses the following data <b>solely on your device</b>:</p>
-<div class="tablewrap"><table>
+<div class="tablewrap">
+<table>
 <tr><th>Data</th><th>Purpose</th><th>Stored</th></tr>
 <tr><td>Wi-Fi scan data (BSSID, SSID, RSSI, channel, band)</td><td>Scan, RSSI/SNR History, Tracking, Survey, Roaming Analysis</td><td>Locally on device only</td></tr>
 <tr><td>Beacon metadata broadcast by APs (advertised AP name, vendor fields)</td><td>Decoded passively on-device from frames APs already broadcast; shown as the 📡 AP name and included in exports</td><td>In-memory only; written out only into export files you create</td></tr>
@@ -56,12 +57,13 @@
 <tr><td>Captured network packets (Traffic Monitor)</td><td>Showing you the traffic of the device you are running the App on, so you can diagnose it. Contains the addresses and hostnames <b>this computer</b> talked to, and the packet contents themselves</td><td>Written to a temporary folder while the capture runs and <b>deleted as each segment is read</b>; nothing is kept after you stop, except a file you export yourself</td></tr>
 <tr><td>Captured 802.11 frames (Wi-Fi Capture)</td><td>Reading management frames that nearby devices broadcast. Unlike the row above, this sees frames from <b>other devices in range</b>, not only this one</td><td>Same temporary handling; nothing is kept unless you export it</td></tr>
 <tr><td>Licence status from the Microsoft Store (which paid options your account holds)</td><td>Keeping paid features available, including while you are offline</td><td>Locally on device only, protected by Windows DPAPI under your Windows user account; contains no payment details and no account identifiers</td></tr>
-</table></div>
+</table>
+</div>
 <p><b>We do not collect, transmit, or store any personal data on external servers, with one optional exception you control:</b> the Network Overview "Public IP" lookup contacts ipinfo.io only when you run it — see <i>Third-Party Services</i> below.</p>
 <p><b>Traffic Monitor and Wi-Fi Capture.</b> These require explicit consent before first use, and the two consents are SEPARATE because the two tools see different things: Traffic Monitor sees this computer's own traffic, while Wi-Fi Capture sees management frames broadcast by every device in range — including probe requests, which can carry the names of networks a device has joined before. Capture runs only while you have started it and stops when you stop it. The App does not include Wireshark and does not install it; it detects a copy you installed yourself and runs it, and it works normally without one.</p>
 <p><b>Investigating display defects.</b> Some display problems only appear on hardware the developer does not have. A known example is a small movement of the window that has been reported on 14-inch laptops and cannot be reproduced on the 15-inch machine the App is developed on — measurement inside the App found no movement at all, so the only remaining way to investigate is to compare the two machines. For that reason, <b>while diagnostic logging is switched on</b>, the App writes a short description of the machine into the log: the Windows version, each display's resolution and scaling, the panel size the display reports about itself, the graphics adapter and its driver version, and whether the side menu is collapsed. It is written when the App starts, when you switch logging on, and when you collapse or expand the side menu.</p>
 <p>This information describes the computer, not you: no user name, no account, no serial number, no network data. <b>If diagnostic logging is off — which is how the App ships — none of it is collected at all</b>, and the App does not even ask Windows for it. Like every other log record it stays on your device, and it reaches us only if you export the log yourself from the Logs menu and choose to send it to <a href="mailto:support@qandix.com">support@qandix.com</a>. Sending it is entirely your decision, and you can read the exported file before you do: exporting as plain TXT shows you exactly what it contains.</p>
-<p><b>Network Tools.</b> The Network Tools require explicit one-time consent before first use. Every operation is initiated manually by you and is directed only at the hosts/addresses/networks you specify; the App makes no automated or background network requests. Results and any read of the local ARP neighbor cache are shown on-device and are neither stored nor transmitted off-device. Each tool keeps a history of its runs — what you typed and the result exactly as it was shown (up to 1,000 entries per tool) — in the App's data folder on your device, so you can bring a result back later. A result can contain what the tool itself showed you, such as host names, addresses of devices on your network, or your public IP address. Nothing in it is sent anywhere; you can delete entries from each tool's history list or clear the whole history in the Cache Manager. Wi-Fi Capture keeps no history.</p>
+<p><b>Network Tools.</b> The Network Tools require explicit one-time consent before first use. Every operation is initiated manually by you and is directed only at the hosts/addresses/networks you specify; the App makes no automated or background network requests. Results and any read of the local ARP neighbor cache are shown on-device and are never transmitted off-device. Each tool keeps a history of its runs — what you typed and the result exactly as it was shown (up to 1,000 entries per tool) — in the App's data folder on your device, so you can bring a result back later. A result can contain what the tool itself showed you, such as host names, addresses of devices on your network, or your public IP address. Nothing in it is sent anywhere; you can delete entries from each tool's history list or clear the whole history in the Cache Manager. Wi-Fi Capture keeps no history.</p>
 <hr>
 <h2>2. Third-Party Services</h2>
 <p>The App does <b>not</b> integrate analytics SDKs, advertising networks, social media SDKs, or cloud services. All third-party code is open-source libraries (Apache POI, zip4j, JNA, Compose Multiplatform) running entirely on-device.</p>
@@ -70,7 +72,8 @@
 <hr>
 <h2>3. System Access Used</h2>
 <p>The App is a desktop application and uses the following Windows facilities:</p>
-<div class="tablewrap"><table>
+<div class="tablewrap">
+<table>
 <tr><th>Access</th><th>Why</th></tr>
 <tr><td>Native WLAN API (Wi-Fi adapter)</td><td>Scan for Wi-Fi Access Points and read scan results</td></tr>
 <tr><td>Windows Location setting</td><td>Windows may require Location access to be enabled for Wi-Fi scan results to be returned to apps</td></tr>
@@ -80,7 +83,8 @@
 <tr><td>An installed copy of Wireshark (<code>dumpcap</code>), if you have one</td><td>Traffic Monitor and Wi-Fi Capture run it as a separate program to record packets while you watch. It is never bundled with the App, and the App is fully functional without it</td></tr>
 <tr><td>Temporary folder</td><td>Holds capture segments for the seconds between recording and reading them; each is deleted immediately after it is read</td></tr>
 <tr><td>Display and graphics adapter information (Windows WMI)</td><td>Describing the machine in the diagnostic log so a display defect can be investigated — queried <b>only while logging is switched on</b>, never otherwise</td></tr>
-</table></div>
+</table>
+</div>
 <p>No data leaves your device except exports you share yourself and the optional Public IP lookup above.</p>
 <hr>
 <h2>4. Data Storage and Security</h2>
@@ -90,6 +94,7 @@
 <p class="li">• The AP Database is encrypted on-device using AES-256-GCM with PBKDF2 key derivation (600,000 iterations); the key is derived from your passphrase and held only in memory.</p>
 <p class="li">• Diagnostic activity logs are stored encrypted (AES-256-GCM) with a device-internal key protected by <b>Windows Data Protection API (DPAPI)</b> under your Windows user account; they contain app events only (no personal data), never leave the device unless you export them, and can be exported as plain TXT or a password-protected AES-256 ZIP. The description of your display and graphics hardware, when logging is on, is stored inside that same encrypted log and is protected the same way.</p>
 <p class="li">• Licence status obtained from the Microsoft Store is cached in the App's data folder, protected by <b>Windows DPAPI</b> under your Windows user account, so paid features remain available when you are offline. It records which paid options your account holds — never payment details, and never an account identifier — and is not transmitted anywhere.</p>
+<p class="li">• Capture files written by Traffic Monitor and Wi-Fi Capture live in a temporary folder for seconds at a time: each segment is deleted as soon as it has been read, and the folder is removed when the capture stops. Nothing captured survives the session unless you export it yourself. Captures are never uploaded, and nothing about them is transmitted anywhere.</p>
 <p class="li">• Uninstalling the App removes the installed program. For Microsoft Store (MSIX) installs, Windows keeps the App's data inside the app's package profile and removes it as part of uninstall; any remaining data can also be deleted manually under <code>%APPDATA%\AP-Scout Pro\</code>.</p>
 <hr>
 <h2>5. Subscription and Licence Data</h2>
@@ -102,10 +107,10 @@
 <p>We may update this Privacy Policy from time to time. Changes will be posted at the same URL with an updated "Last updated" date.</p>
 <hr>
 <h2>8. Contact</h2>
-<p><b>Email:</b> support@qandix.com</p>
+<p><b>Email:</b> <a href="mailto:support@qandix.com">support@qandix.com</a></p>
 <p>See also the <a href="terms-windows.html">Terms of Use</a>.</p>
 <hr>
-<p><i>Last updated: 2026-09-16 | AP-Scout Pro for Windows (Microsoft Store package 1.0.30.0)</i></p>
+<p><i>Last updated: 2026-09-17 | AP-Scout Pro for Windows — Microsoft Store package 1.0.31.0</i></p>
 </div>
 </body>
 </html>

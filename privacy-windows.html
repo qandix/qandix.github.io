@@ -36,7 +36,7 @@
 <p><b>Product:</b> AP-Scout Pro (Windows desktop)</p>
 <p><b>Developer:</b> Qandix</p>
 <p><b>Contact:</b> <a href="mailto:support@qandix.com">support@qandix.com</a></p>
-<p><b>Last updated:</b> 2026-09-23</p>
+<p><b>Last updated:</b> 2026-10-22</p>
 <hr>
 <h2>Privacy Policy</h2>
 <p><b>AP-Scout Pro for Windows</b> ("the App") is developed by Qandix. This Privacy Policy explains what information the App accesses, how it is used, and how it is protected.</p>
@@ -54,6 +54,7 @@
 <tr><td>Network Tools activity</td><td>On-demand diagnostics (Ping, DNS, Traceroute, Port Check, HTTP Check, TLS Inspector, TCP Throughput, Latency Trend, Subnet Calculator, Wake-on-LAN, NTP, ARP Table, Network Overview, LAN Discovery, LAN Devices) to hosts/networks you specify</td><td><b>Each tool keeps a history</b> of what you typed and the result it showed, up to 1,000 entries per tool, locally on device only, so you can bring a run back; delete entries from the tool's history list or clear it all in the Cache Manager. Never transmitted off-device</td></tr>
 <tr><td>Diagnostic activity logs (app events only — no personal data)</td><td>Field diagnostics via the Logs menu — records the App's own activity</td><td>Locally on device only, encrypted (AES-256-GCM); view, export, or delete anytime via the Logs menu</td></tr>
 <tr><td>Display and graphics information (Windows version, screen resolution and scaling, panel size reported by the display itself, graphics adapter name and driver version, and whether the side menu is collapsed)</td><td>Written into the diagnostic activity log <b>only while logging is switched on</b>, so that a display defect you report can be compared against the machine the App is developed on — see <i>Investigating display defects</i> below</td><td>Locally on device only, inside the same encrypted log; never collected while logging is off</td></tr>
+<tr><td>Windows crash record and network-filter driver names (Device Readiness ▸ Network path)</td><td>Telling you what Windows itself recorded about the last kernel crash on this PC — its code, its time and where Windows saved its dump — and which loaded kernel drivers filter network traffic, so you can see what sits between this App and the network. A kernel crash cannot be caused by an application, and this page is how the App shows you that rather than asking you to take its word</td><td>Read from Windows on demand when you open the page and shown on screen; nothing is written except, if you dismiss the notice, the identifier Windows itself gave that crash, kept so the same crash is not announced twice. Never transmitted off-device</td></tr>
 <tr><td>Captured network packets (Traffic Monitor)</td><td>Showing you the traffic of the device you are running the App on, so you can diagnose it. Contains the addresses and hostnames <b>this computer</b> talked to, and the packet contents themselves</td><td>Written to a <b>temporary file on this device</b> while the App is open, so a long capture is not lost as the on-screen list fills. It is deleted when you start another capture, discard this one, or close the App; nothing is kept afterwards except a file you export yourself</td></tr>
 <tr><td>Captured 802.11 frames (Wi-Fi Capture)</td><td>Reading management frames that nearby devices broadcast. Unlike the row above, this sees frames from <b>other devices in range</b>, not only this one</td><td>Same temporary handling as the row above; nothing is kept once the App closes unless you export it</td></tr>
 <tr><td>Licence status from the Microsoft Store (which paid options your account holds)</td><td>Keeping paid features available, including while you are offline</td><td>Locally on device only, protected by Windows DPAPI under your Windows user account; contains no payment details and no account identifiers</td></tr>
@@ -82,6 +83,7 @@
 <tr><td>Windows file picker</td><td>Importing CSV inventories and floor-plan images you select</td></tr>
 <tr><td>An installed copy of Wireshark (<code>dumpcap</code>), if you have one</td><td>Traffic Monitor and Wi-Fi Capture run it as a separate program to record packets while you watch. It is never bundled with the App, and the App is fully functional without it</td></tr>
 <tr><td>Temporary folder</td><td>Holds the capture while the App is open: each segment as it is recorded, and the running capture as a whole, so nothing you captured is lost to the on-screen limit. Erased when the capture is replaced or discarded and when the App closes; if the App was killed, you are asked at the next start to save or discard it, and it is erased either way</td></tr>
+<tr><td>Windows System event log (the last <code>BugCheck</code> record only) and the list of loaded kernel drivers</td><td>Device Readiness ▸ Network path reads both when you open that page: the crash record so the App can tell you what Windows recorded, and the driver list so it can show which drivers filter the network path. Both are read-only, need no administrator rights, and are read nowhere else in the App</td></tr>
 <tr><td>Display and graphics adapter information (Windows WMI)</td><td>Describing the machine in the diagnostic log so a display defect can be investigated — queried <b>only while logging is switched on</b>, never otherwise</td></tr>
 </table>
 </div>
@@ -110,7 +112,7 @@
 <p><b>Email:</b> <a href="mailto:support@qandix.com">support@qandix.com</a></p>
 <p>See also the <a href="terms-windows.html">Terms of Use</a>.</p>
 <hr>
-<p><i>Last updated: 2026-09-23 | AP-Scout Pro for Windows — Microsoft Store package 1.0.38.0</i></p>
+<p><i>Last updated: 2026-10-22 | AP-Scout Pro for Windows — Microsoft Store package 1.0.40.0</i></p>
 </div>
 </body>
 </html>
